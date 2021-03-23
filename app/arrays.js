@@ -4,6 +4,9 @@
 // output: ['is', 'a', 'split', 'sentence.', 'This']
 
 function rearranger(arr) {
+    arr.push(arr[0])
+    arr.shift()
+    return arr
 }
 
 
@@ -17,6 +20,13 @@ function rearranger(arr) {
 // output: 42
 
 function largestNum(arr) {
+    let lgNum = arr[0]
+    for (let i = 0; i <= arr.length; i++) {
+        if (arr[i] > i) {
+            lgNum = arr[i]
+        }
+    }
+    return lgNum
 }
 
 
@@ -29,6 +39,10 @@ function largestNum(arr) {
 // output: [16, 8, 4, 28]
 
 function elemsTimesLength(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] *= arr.length
+    }
+    return arr
 }
 
 
@@ -64,6 +78,12 @@ let flights = [{
 
 function flightCost(destination, firstClass) {
     //***hint: use the find method***
+    const found = flights.find(theFlight => theFlight.to == destination.toUpperCase())
+
+    if (firstClass == true) {
+        return found.prices.firstClass
+    }
+    return found.prices.standard
 
 }
 
@@ -80,9 +100,13 @@ function flightCost(destination, firstClass) {
 // output: { error: "No user with that id." } 
 
 
-let staff = [{ id: 1, name: 'Jon' }, { id: 2, name: 'Yuli' }, { id: 21, name: 'Peter' },
-{ id: 17, name: 'St. MaryLou de la Playa Carmen' }, { id: 51, name: 'Doug' },
-{ id: 881, name: 'Paul' }, { id: 0, name: 'Jon' }, { id: 999, name: 'Timma' }]
+let staff = [{ id: 1, name: 'Jon' },
+{ id: 2, name: 'Yuli' },
+{ id: 21, name: 'Peter' },
+{ id: 17, name: 'St. MaryLou de la Playa Carmen' },
+{ id: 51, name: 'Doug' },
+{ id: 881, name: 'Paul' },
+{ id: 0, name: 'Jon' }, { id: 999, name: 'Timma' }]
 
 function findById(id) {
 
