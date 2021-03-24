@@ -111,8 +111,7 @@ let staff = [{ id: 1, name: 'Jon' },
 function findById(id) {
 
     const found = staff.find(i => i.id === id);
-    console.log(found);
-    if (id === i.id) {
+    if (found) {
         return found
     } else {
         return "No user with that id."
